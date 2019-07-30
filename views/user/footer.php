@@ -6,13 +6,13 @@
                 <p>Puedes ponerte en contacto con nosotros a través del correo electrónico: info@planetblogeek.com.</p>
             </div>
             <div class="col-md-3">
-                <h5 class="text-uppercase">Menu</h5>
+                <h5 class="text-uppercase">Menú</h5>
                 <ul class="list-unstyled">
                     <li>
-                        <a href="home.php">Home</a>
+                        <a href="?page=home">Inicio</a>
                     </li>
                     <li>
-                        <a href="loginForm.php">Login</a>
+                        <a href="?page=login">Iniciar sesión</a>
                     </li>
                 </ul>
             </div>
@@ -29,6 +29,3 @@
         <span>Planet Geek</span>
     </div>
 </footer>
-</body>
-
-</html>

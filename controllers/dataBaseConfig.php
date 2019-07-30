@@ -6,5 +6,5 @@
     // echo "conexion exitosa";
     } catch (PDOException $e) {
         die($e->getMessage());
-        }
+    }
 ?>
