@@ -1,4 +1,4 @@
-<?php $page = $_GET['page'];?>
+<?php $page = $_GET['page']; ?>
 <?php $page === '' ? 'home' : $page; ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
@@ -10,13 +10,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item <?php echo $page === 'home' ? 'active' : ''?>">
+                <li class="nav-item <?php echo $page === 'home' ? 'active' : '' ?>">
                     <a class="nav-link" href="?page=home">Inicio </a>
                 </li>
-                <li class="nav-item <?php echo $page === 'login' ? 'active' : ''?>">
+                <li class="nav-item <?php echo $page === 'login' ? 'active' : '' ?>">
                     <a class="nav-link" href="?page=login">Iniciar sesión</a>
                 </li>
-                <li class="nav-item <?php echo $page === 'about' ? 'active' : ''?>">
+                <li class="nav-item <?php echo $page === 'about' ? 'active' : '' ?>">
                     <a class="nav-link" href="?page=about">Sobre nosotros</a>
                 </li>
             </ul>

@@ -1,4 +1,4 @@
 <?php
 session_start();
 session_destroy();
-header("location:loginForm.php");
+header("location:../views/user/login.php");

@@ -25,7 +25,7 @@
             <i class="fab fa-linkedin fa-3x"></i>
         </div>
 
-        © 2018 Copyright:
+        © 2019 Copyright:
         <span>Planet Geek</span>
     </div>
 </footer>

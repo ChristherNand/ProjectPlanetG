@@ -1,5 +1,5 @@
 $(function() {
-    console.log("Im ready")
+  console.log("Im ready");
   $("#formPub").on("submit", function(event) {
     var regexPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{7,15}$/;
     var $formPub = $(this);
@@ -23,13 +23,14 @@ $(function() {
       return false;
     }
     $("#errorMsg").hide();
+
     $.ajax({
       type: "post",
-      url: "operaciones.php",
+      url: "../controllers/createUser.php",
       data: $("#formPub").serialize(),
       dataType: "json",
-      success: function (response) {
-        console.log("Me fui")
+      success: function(response) {
+        console.log("Me fui");
       }
     });
   });

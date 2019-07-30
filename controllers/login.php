@@ -1,5 +1,5 @@
 <?php
-include_once('dataBaseConfig.php');
+include_once('./dataBaseConfig.php');
 session_start();
 
 $email = $_POST["email"];
@@ -14,7 +14,7 @@ if (empty($email) || empty($password)) {
     if ($count > 0) {
         echo "Welcome";
         $_SESSION["email"] = $email;
-        header("location:adminSpace.php");
+        header("location:../admin/index.php");
     } else {
         echo "Los valores ingresados son incorrectos";
     }

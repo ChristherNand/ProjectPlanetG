@@ -53,7 +53,7 @@
             Aceptar <a href="#" class="btn-link">términos y condiciones</a>
           </label>
         </div>
-        <hr/>
+        <hr />
         <button type="text" class="btn btn-primary" id="send">Registrarse</button>
         <a href="?page=login" class="btn btn-link">Cancelar</a>
       </form>
