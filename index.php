@@ -19,7 +19,7 @@
 <body>
     <?php include_once('./views/user/navbar.php'); ?>
     <?php $page = $_GET['page']; ?>
-    <?php $page === '' ? 'home' : $page; ?>
+    <?php if (!$page || $page === '') $page = 'home'; ?>
     <?php include_once('./views/user/' . $page . '.php'); ?>
     <?php if ($page === 'about') : ?>
         <?php include_once('./views/user/footer.php'); ?>
