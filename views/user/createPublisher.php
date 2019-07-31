@@ -2,7 +2,7 @@
   <div class="card mx-auto col-md-10 offset-md-1">
     <div class="card-body">
       <h1 class="text-center">Registro - Publicador</h1>
-      <form method="POST" class="mt-4" id="formPub" action="">
+      <form method="POST" class="mt-4" id="formPub" action="./controllers/createUser.php">
         <div class="form-group">
           <label>Primer Nombre</label>
           <input type="text" class="form-control" id="primerNombre" name="primerNombre" placeholder="Introduzca primer nombre" required>
@@ -21,7 +21,7 @@
         </div>
         <div class="form-group">
           <label>Telefono</label>
-          <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Introduzca número de teléfono">
+          <input type="text" class="form-control" id="telefono" name="phone" placeholder="Introduzca número de teléfono">
         </div>
         <div class="form-group">
           <label>Correo Electrónico</label>
@@ -47,8 +47,15 @@
           <label>Confirmar Contraseña</label>
           <input type="password" class="form-control" id="password2" name="password2" placeholder="Confirmar Contraseña" required>
         </div>
+        <div class="form-group">
+          <label>Tipo de Usuario</label>
+          <select class="form-control" name="userTypeId">
+            <option value="2" selected>Publisher</option>
+          </select>
+        </div>
+
         <div class="form-check terms-and-conditions">
-          <input class="form-check-input" type="checkbox" value="" name="">
+          <input class="form-check-input" type="checkbox" value="publicador" name="publicador">
           <label class="form-check-label" data-toggle="modal" data-target="#publicador">
             Aceptar <a href="#" class="btn-link">términos y condiciones</a>
           </label>

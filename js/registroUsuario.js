@@ -24,14 +24,14 @@ $(function() {
     }
     $("#errorMsg").hide();
 
-    $.ajax({
-      type: "post",
-      url: "../controllers/createUser.php",
-      data: $("#formPub").serialize(),
-      dataType: "json",
-      success: function(response) {
-        console.log("Me fui");
-      }
-    });
+    // $.ajax({
+    //   type: "post",
+    //   url: "../controllers/createUser.php",
+    //   data: $("#formPub").serialize(),
+    //   dataType: "json",
+    //   success: function(response) {
+    //     console.log("Me fui");
+    //   }
+    // });
   });
 });

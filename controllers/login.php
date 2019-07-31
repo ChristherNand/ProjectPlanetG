@@ -5,7 +5,7 @@ session_start();
 $email = $_POST["email"];
 $password = md5($_POST["password"]);
 if (empty($email) || empty($password)) {
-    echo "<p>Porfavor llene los campos</p>";
+    echo "<h1>Porfavor llene los campos</h1>";
 } else {
     $sql = "SELECT email, password FROM usuarios WHERE email = '$email' AND password = '$password' ";
     $result = $conexion->prepare($sql);
