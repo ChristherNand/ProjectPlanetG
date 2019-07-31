@@ -3,7 +3,7 @@
 $attributes = [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC];
 
 try {
-    $conexion = new PDO("mysql:host=localhost;dbname=planetgeek", 'root', '', $attributes);
+    $conexion = new PDO("mysql:host=localhost;dbname=planetaGeek", 'root', '', $attributes);
     $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     //echo "Conexión éxitosa";

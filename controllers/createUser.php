@@ -1,5 +1,13 @@
 <?php
 include "dataBaseConfig.php";
+// $sql = "SELECT * FROM usuarios";
+// $result = $conexion->query($sql);
+// $values = $result->fetchAll(PDO::FETCH_OBJ);
+// $count = $result->rowCount();
+// if($count > 0){
+
+// }
+
 $sql = "INSERT INTO usuarios
 (primerNombre, segundoNombre, primerApellido, 
 segundoApellido,phone, email, estudios,institucion,usuario,
@@ -16,13 +24,13 @@ try {
     $segundoNombre = test($_POST['segundoNombre']);
     $primerApellido = test($_POST['primerApellido']);
     $segundoApellido = test($_POST['segundoApellido']);
-    $phone = test($_POST['phone']);
-    $email = test($_POST['email']);
-    $estudios = test($_POST['estudios']);
-    $institucion = test($_POST['institucion']);
-    $usuario = test($_POST['usuario']);
+    $phone = isset($_POST['phone']) ? test($_POST['phone']) : '';
+    $email = isset($_POST['email']) ? test($_POST['email']) : '';
+    $estudios = isset($_POST['estudios']) ? test($_POST['estudios']) : '';
+    $institucion = isset($_POST['institucion']) ? test($_POST['institucion']) : '';
+    $usuario = isset($_POST['usuario']) ? test($_POST['usuario']) : '';
     $password = test(md5($_POST['password']));
-    $id_user_type = test(md5($_POST['userTypeId']));
+    $id_user_type = test(($_POST['userTypeId']));
 
 
     $result = $conexion->prepare($sql);

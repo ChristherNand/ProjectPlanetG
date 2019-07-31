@@ -7,14 +7,21 @@ $password = md5($_POST["password"]);
 if (empty($email) || empty($password)) {
     echo "<h1>Porfavor llene los campos</h1>";
 } else {
-    $sql = "SELECT email, password FROM usuarios WHERE email = '$email' AND password = '$password' ";
-    $result = $conexion->prepare($sql);
-    $result->execute();
+    $sql = "SELECT email, password, id_user_type FROM usuarios WHERE email = '$email' AND password = '$password' ";
+    $result = $conexion->query($sql);
+    $values = $result->fetchAll(PDO::FETCH_OBJ);
     $count = $result->rowCount();
     if ($count > 0) {
-        echo "Welcome";
         $_SESSION["email"] = $email;
-        header("location:../admin/index.php");
+        foreach ($values as $key) {
+            if ($key->id_user_type == 3) {
+                header("location:../index.php?page=home");
+            } else if ($key->id_user_type == 2) {
+                header("location:../admin/index.php?page=publisher");
+            } else if ($key->id_user_type == 1) {
+                header("location:../admin/index.php?page=admin");
+            }
+        }
     } else {
         echo "Los valores ingresados son incorrectos";
     }

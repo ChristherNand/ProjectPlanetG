@@ -2,7 +2,7 @@
   <div class="card mx-auto col-md-10 offset-md-1">
     <div class="card-body">
       <h1 class="text-center">Registro - Usuario</h1>
-      <form class="mt-4" method="POST" id="formPub">
+      <form class="mt-4" method="POST" id="formPub" action="./controllers/createUser.php">
         <div class="form-group">
           <label>Primer Nombre</label>
           <input type="text" class="form-control" id="primerNombre" name="primerNombre" placeholder="Introduzca primer nombre" required>
@@ -29,7 +29,13 @@
         </div>
         <div class="form-group">
           <label>Confirmar Contraseña</label>
-          <input type="password" class="form-control" id="password2" name="password2" placeholder="Confirmar Contraseña" required>
+          <input type="password" class="form-control" id="password2" placeholder="Confirmar Contraseña" required>
+        </div>
+        <div class="form-group">
+          <label>Tipo de Usuario</label>
+          <select class="form-control" name="userTypeId">
+            <option value="3" selected>User</option>
+          </select>
         </div>
         <div class="form-check terms-and-conditions">
           <input class="form-check-input" type="checkbox" value="" name="">
@@ -37,7 +43,7 @@
             Aceptar <a href="#" class="btn-link">términos y condiciones</a>
           </label>
         </div>
-        <hr/>
+        <hr />
         <button type="submit" class="btn btn-primary">Registrarse</button>
         <a href="?page=login" class="btn btn-link">Cancelar</a>
       </form>

@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,8 +19,8 @@
 
 <body>
     <?php include_once('./views/user/navbar.php'); ?>
-    <?php $page = $_GET['page']; ?>
-    <?php if (!$page || $page === '') $page = 'home'; ?>
+    <?php $page = (isset($_GET['page'])) ? $_GET['page'] : 'home'; ?>
+    <?php if ($page === '') $page = 'home'; ?>
     <?php include_once('./views/user/' . $page . '.php'); ?>
     <?php if ($page === 'about') : ?>
         <?php include_once('./views/user/footer.php'); ?>

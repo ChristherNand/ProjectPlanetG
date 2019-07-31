@@ -29,7 +29,7 @@
         </div>
         <div class="form-group">
           <label>Nivel Educativo</label>
-          <input type="text" class="form-control" id="nivelEducativo" name="nivelEducativo" placeholder="Introduzca su nivel Educativo" required>
+          <input type="text" class="form-control" id="nivelEducativo" name="estudios" placeholder="Introduzca su nivel Educativo" required>
         </div>
         <div class="form-group">
           <label>Institución a la que pertence</label>
@@ -45,7 +45,7 @@
         </div>
         <div class="form-group">
           <label>Confirmar Contraseña</label>
-          <input type="password" class="form-control" id="password2" name="password2" placeholder="Confirmar Contraseña" required>
+          <input type="password" class="form-control" id="password2" placeholder="Confirmar Contraseña" required>
         </div>
         <div class="form-group">
           <label>Tipo de Usuario</label>
@@ -55,7 +55,7 @@
         </div>
 
         <div class="form-check terms-and-conditions">
-          <input class="form-check-input" type="checkbox" value="publicador" name="publicador">
+          <input class="form-check-input" type="checkbox">
           <label class="form-check-label" data-toggle="modal" data-target="#publicador">
             Aceptar <a href="#" class="btn-link">términos y condiciones</a>
           </label>

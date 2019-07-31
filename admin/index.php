@@ -6,8 +6,9 @@ if ($_SESSION["email"] == null || $_SESSION["email"] == "") {
     die();
 }
 ?>
+<?php $conexion = new PDO("mysql:host=localhost;dbname=planetgeek", 'root', ''); ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
@@ -39,7 +40,7 @@ if ($_SESSION["email"] == null || $_SESSION["email"] == "") {
         <nav id="sidebar" class="sidebar-wrapper">
             <div class="sidebar-content">
                 <div class="sidebar-brand">
-                    <a href="#">Administrator</a>
+                    <a href="#">Publisher</a>
                     <!--<div id="close-sidebar">
                             <i class="fas fa-times"></i>
                         </div>-->
@@ -52,7 +53,7 @@ if ($_SESSION["email"] == null || $_SESSION["email"] == "") {
                         <span class="user-name">Christian
                             <strong>Hernandez</strong>
                         </span>
-                        <span class="user-role">Administrator</span>
+                        <span class="user-role">Publisher</span>
                         <span class="user-status">
                             <i class="fa fa-circle"></i>
                             <span>Online</span>
@@ -103,8 +104,8 @@ if ($_SESSION["email"] == null || $_SESSION["email"] == "") {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php include_once("./dataBaseConfig.php");
-                                            $query = $conexion->query("SELECT idUsuario,primerNombre, primerApellido, email, usuario FROM usuarios;");
+                                            <?php include_once("../controllers/dataBaseConfig.php");
+                                            $query = $conexion->query("SELECT user_id,primerNombre, primerApellido, email, usuario FROM usuarios;");
                                             $users = $query->fetchAll(PDO::FETCH_OBJ);
                                             ?>
                                             <?php foreach ($users as $user) : ?>
@@ -132,7 +133,27 @@ if ($_SESSION["email"] == null || $_SESSION["email"] == "") {
                                 <a href="#">
                                     <i class="fa fa-tachometer-alt"></i>
                                     <span>Posts</span>
+
                                 </a>
+                                <div class="sidebar-submenu">
+                                    <table>
+                                        <thead>
+                                            <tr style="color:white;">
+                                                <th>Titulo</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php $query = $conexion->query("SELECT * FROM comentarios;");
+                                            $users = $query->fetchAll(PDO::FETCH_OBJ); ?>
+                                            <?php foreach ($users as $user) : ?>
+                                                <tr>
+                                                    <td><a href="?page=publisher&post=<?php echo $user->idComentario; ?>"><?php echo $user->titulo ?></a></td>
+                                                </tr>
+                                            <?php endforeach; ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+
                             </li>
                         </ul>
                     </div>
