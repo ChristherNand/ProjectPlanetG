@@ -26,7 +26,7 @@ if ($_SESSION["email"] == null || $_SESSION["email"] == "") {
 
 <body>
     <?php $page = $_GET['page']; ?>
-    <?php $page === '' ? 'home' : $page; ?>
+    <?php if (!$page || $page === '') $page = 'home'; ?>
     <div class="page-wrapper chiller-theme toggled">
         <section class="page-content">
             <div class="container-fluid">
