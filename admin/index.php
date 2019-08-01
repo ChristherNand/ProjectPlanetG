@@ -6,7 +6,7 @@ if ($_SESSION["email"] == null || $_SESSION["email"] == "") {
     die();
 }
 ?>
-<?php $conexion = new PDO("mysql:host=localhost;dbname=planetgeek", 'root', ''); ?>
+<?php include_once('../controllers/dataBaseConfig.php'); ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -95,12 +95,10 @@ if ($_SESSION["email"] == null || $_SESSION["email"] == "") {
                                     <table>
                                         <thead>
                                             <tr style="color:white;">
-                                                <th>Id</th>
+
                                                 <th>Nombre</th>
                                                 <th>Apellido</th>
-                                                <th>Correo</th>
-                                                <th>Usuario</th>
-                                                <th>eliminar</th>
+
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -110,11 +108,11 @@ if ($_SESSION["email"] == null || $_SESSION["email"] == "") {
                                             ?>
                                             <?php foreach ($users as $user) : ?>
                                                 <tr style="color:white; background:green">
-                                                    <td><?php echo $user->idUsuario ?></td>
+
                                                     <td><?php echo $user->primerNombre ?></td>
                                                     <td><?php echo $user->primerApellido ?></td>
-                                                    <td><?php echo $user->email ?></td>
-                                                    <td><?php echo $user->usuario ?></td>
+                                                    <td><a href="?page=admin&user=<?php echo $user->user_id; ?>">Ver Publicacion</a></td>
+
                                                 </tr>
                                             <?php endforeach; ?>
                                         </tbody>
@@ -143,11 +141,11 @@ if ($_SESSION["email"] == null || $_SESSION["email"] == "") {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php $query = $conexion->query("SELECT * FROM comentarios;");
-                                            $users = $query->fetchAll(PDO::FETCH_OBJ); ?>
-                                            <?php foreach ($users as $user) : ?>
+                                            <?php $query = $conexion->query("SELECT * FROM post;");
+                                            $posts = $query->fetchAll(PDO::FETCH_OBJ); ?>
+                                            <?php foreach ($posts as $post) : ?>
                                                 <tr>
-                                                    <td><a href="?page=publisher&post=<?php echo $user->idComentario; ?>"><?php echo $user->titulo ?></a></td>
+                                                    <td><a href="?page=publisher&post=<?php echo $post->id_post; ?>"><?php echo $post->titulo ?></a></td>
                                                 </tr>
                                             <?php endforeach; ?>
                                         </tbody>
