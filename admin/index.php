@@ -40,7 +40,7 @@ if ($_SESSION["email"] == null || $_SESSION["email"] == "") {
         <nav id="sidebar" class="sidebar-wrapper">
             <div class="sidebar-content">
                 <div class="sidebar-brand">
-                    <a href="#">Publisher</a>
+                    <a href="#">Aministrador</a>
                     <!--<div id="close-sidebar">
                             <i class="fas fa-times"></i>
                         </div>-->
@@ -60,7 +60,7 @@ if ($_SESSION["email"] == null || $_SESSION["email"] == "") {
                         </span>
                     </div>
                 </div>
-                <div class="sidebar-search">
+                <!-- <div class="sidebar-search">
                     <div>
                         <div class="input-group">
                             <input type="text" class="form-control search-menu" placeholder="Search...">
@@ -71,7 +71,7 @@ if ($_SESSION["email"] == null || $_SESSION["email"] == "") {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="sidebar-search">
                     <div>
                         <a href="../controllers/logout.php">
@@ -112,7 +112,6 @@ if ($_SESSION["email"] == null || $_SESSION["email"] == "") {
                                                     <td><?php echo $user->primerNombre ?></td>
                                                     <td><?php echo $user->primerApellido ?></td>
                                                     <td><a href="?page=admin&user=<?php echo $user->user_id; ?>">Ver Publicacion</a></td>
-
                                                 </tr>
                                             <?php endforeach; ?>
                                         </tbody>
@@ -138,6 +137,7 @@ if ($_SESSION["email"] == null || $_SESSION["email"] == "") {
                                         <thead>
                                             <tr style="color:white;">
                                                 <th>Titulo</th>
+                                                <th>Operacion</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -146,6 +146,7 @@ if ($_SESSION["email"] == null || $_SESSION["email"] == "") {
                                             <?php foreach ($posts as $post) : ?>
                                                 <tr>
                                                     <td><a href="?page=publisher&post=<?php echo $post->id_post; ?>"><?php echo $post->titulo ?></a></td>
+                                                    <td><a href="<?php echo "../controllers/eliminarPublicacion.php?id_post=" . $post->id_post ?>">Eliminar</a></td>
                                                 </tr>
                                             <?php endforeach; ?>
                                         </tbody>

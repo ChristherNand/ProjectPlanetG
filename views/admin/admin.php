@@ -31,11 +31,11 @@
                                 ?>
                                 <?php if ($count1 > 0) : ?>
                                     <?php foreach ($comments as $comment) : ?>
-                                        <div class="col-md-12">
-                                            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+                                        <div class="col-md-12 ml-5">
+                                            <i class="fas fa-user-edit fa-2x"></i>
                                             <div class="media-body">
                                                 <h5 class="mt-0">Usuario: <?php echo $comment->user_id ?></h5>
-                                                <p><?php echo $comment->comment; ?></p>
+                                                <p class="h-25 w-50 p-3 text-justify border"><?php echo $comment->comment; ?></p>
                                             </div>
                                         </div>
                                     <?php endforeach; ?>

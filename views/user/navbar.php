@@ -4,7 +4,7 @@ if ($page === '') $page = 'home';
 $session = isset($_SESSION['email']) ? $_SESSION['email'] : NULL;
 
 ?>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
         <a class="logo-image" href="?page=home">
             <img src="./images/planeta.svg" alt="logo">
